@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ contact.lastname }} {{ contact.firstname }}{% endblock %}
+
+{% block body %}
+    <h1>{{ contact.lastname }} {{ contact.firstname }}</h1>
+    <li class="information">firstname: {{ contact.firstname }}</li>
+    <li class="information">lastname: {{ contact.lastname }}</li>
+    <li class="information">email: {{ contact.email }}</li>
+    <li class="information">phone: {{ contact.phone }}</li>
+    <li class="information">category: {{ contact.category ? contact.category.name : "pas de catégorie" }}</li>
+{% endblock %}

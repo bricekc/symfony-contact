@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <ul>
+    {%  for  categorie in categories %}
+        <li class="categorie">
+            <a href="{{ url('app_category_id', {id: categorie.category.id}) }}">
+                {{ categorie.category.name }}
+                <span class="badge bg-secondary">{{ categorie.count }}</span>
+            </a>
+        </li>
+    {%  endfor %}
+    </ul>
+{% endblock %}

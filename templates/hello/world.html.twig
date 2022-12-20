@@ -1,0 +1,12 @@
+{%  extends 'base.html.twig' %}
+{% block title %}
+    Hello {{ name}}!
+{% endblock %}
+{% block body %}
+    {% for i in 1..10 %}
+        <div style=color:{{ cycle(['green','red'],loop.index0)}}>
+    Hello {{ name |capitalize }}! ({{ i |format_number({min_integer_digit:2})}})
+        <br>
+        </div>
+    {%  endfor %}
+{% endblock %}

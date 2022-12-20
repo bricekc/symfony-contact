@@ -1,0 +1,8 @@
+<ul>
+    {% for contact in contacts %}
+            <li class="contact">{% if is_granted('ROLE_ADMIN') %}<span class="material-icons"><a class = "text-warning" href="{{ url('app_contact_update', {id: contact.Id}) }}">edit</a></span><span class="material-icons"><a class="text-danger" href="{{ url('app_contact_delete', {id: contact.Id}) }}">delete_forever</a></span>{% endif %}<a href="{{ url('app_contact_id', {id: contact.Id}) }}"><span class="contact"><span class="lastname">{{ contact.lastname }}</span>, <span class="firstname">{{ contact.firstname }}</span></span></a></li>
+{% if contact.category is not null and show_category??true%}
+        <span class="badge bg-secondary">{{ contact.category.name }}</span>{% endif %}
+    {% endfor %}
+</ul>
+{{ knp_pagination_render(contacts) }}

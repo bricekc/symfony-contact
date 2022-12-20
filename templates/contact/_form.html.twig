@@ -1,0 +1,8 @@
+{{ form_start(form) }}
+    {{ form_row(form.firstname, {'label': 'Firstname'}) }}
+    {{ form_row(form.lastname, {'label': 'Lastname'}) }}
+    {{ form_row(form.email, {'label': 'Email'}) }}
+    {{ form_row(form.phone, {'label': 'Phone'}) }}
+    {{ form_row(form.category, {'label': 'Category', 'placeholder':  'Catégorie ?'}) }}
+    <input type="submit" class="btn btn-primary" value="{{ label_submit }}">
+{{ form_end(form) }}
